@@ -82,6 +82,401 @@ paths:
           $ref: '#/components/responses/404'
         '405':
           $ref: '#/components/responses/405'          
+  /airquality:
+    get:
+      tags:
+        - Calidad del aire
+      summary: Devuelve todos los datos relacionados con la calidad del aire.
+      description: Devuelve todos los datos relacionados con la calidad del aire.
+      operationId: getAirQuality
+      parameters:
+        - name: date
+          in: query
+          description: Fecha de la recogida de la información
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    post:
+      tags:
+        - Calidad del aire
+      summary: Registra un nuevo dato de calidad del aire.
+      description: Creacion de nuevos datos asociados a la calidad del aire.
+      operationId: postAirQuality
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AirQuality'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    put:
+      tags:
+        - Calidad del aire
+      summary: Modifica un dato de calidad del aire previamente registrado
+      description: Modifica un dato de calidad del aire previamente registrado
+      operationId: putAirQuality
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AirQuality'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    delete:
+      tags:
+        - Calidad del aire
+      summary: Eliminado de datos de la calidad del aire.
+      description: Eliminado un dato de la calidad del aire guardado en la base de datos.
+      operationId: deleteAirQuality
+      parameters:
+        - name: idAirQuality
+          in: query
+          description: Id de la calidad del aire
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405' 
+  /luminosity:
+    get:
+      tags:
+        - Luminosidad
+      summary: Devuelve todos los datos relacionados con la luminosidad.
+      description: Devuelve todos los datos relacionados con la luminosidad.
+      operationId: getLuminosity
+      parameters:
+        - name: date
+          in: query
+          description: Fecha de la recogida de la información
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    post:
+      tags:
+        - Luminosidad
+      summary: Registra un nuevo dato de luminosidad.
+      description: Creacion de nuevos datos asociados a la luminosidad.
+      operationId: postLuminosity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Luminosity'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    put:
+      tags:
+        - Luminosidad
+      summary: Modifica un dato de luminosidad previamente registrado
+      description: Modifica un dato de luminosidad previamente registrado
+      operationId: putLuminosity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Luminosity'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    delete:
+      tags:
+        - Luminosidad
+      summary: Eliminado de datos de luminosidad.
+      description: Eliminado un dato de luminosidad en la base de datos.
+      operationId: deleteLuminosity
+      parameters:
+        - name: idLuminosity
+          in: query
+          description: Id del dato de luminosidad
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405' 
+  /noise:
+    get:
+      tags:
+        - Ruido
+      summary: Devuelve todos los datos relacionados con el ruido.
+      description: Devuelve todos los datos relacionados con el ruido.
+      operationId: getNoise
+      parameters:
+        - name: date
+          in: query
+          description: Fecha de la recogida de la información
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    post:
+      tags:
+        - Ruido
+      summary: Registra un nuevo dato de ruido.
+      description: Creacion de nuevos datos asociados al ruido.
+      operationId: postNoise
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Noise'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    put:
+      tags:
+        - Ruido
+      summary: Modifica un dato de ruido previamente registrado
+      description: Modifica un dato de ruido previamente registrado
+      operationId: putNoise
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Noise'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    delete:
+      tags:
+        - Ruido
+      summary: Eliminado de datos de ruido.
+      description: Eliminado un dato de ruido en la base de datos.
+      operationId: deleteNoise
+      parameters:
+        - name: idNoise
+          in: query
+          description: Id del dato de ruido
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405' 
+  /humidity:
+    get:
+      tags:
+        - Humedad
+      summary: Devuelve todos los datos relacionados con la humedad.
+      description: Devuelve todos los datos relacionados con la humedad.
+      operationId: getHumidity
+      parameters:
+        - name: date
+          in: query
+          description: Fecha de la recogida de la información
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    post:
+      tags:
+        - Humedad
+      summary: Registra un nuevo dato de humedad.
+      description: Creacion de nuevos datos asociados a la humedad.
+      operationId: postHumidity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Humidity'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    put:
+      tags:
+        - Humedad
+      summary: Modifica un dato de humedad previamente registrado
+      description: Modifica un dato de humedad previamente registrado
+      operationId: putHumidity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Humidity'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    delete:
+      tags:
+        - Humedad
+      summary: Eliminado de datos de humedad.
+      description: Eliminado un dato de humedad en la base de datos.
+      operationId: deleteHumidity
+      parameters:
+        - name: idHumidity
+          in: query
+          description: Id del dato de humedad
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+  /no2_co:
+    get:
+      tags:
+        - Nitrogeno Monoxido Carbono
+      summary: Devuelve todos los datos relacionados con no2_co.
+      description: Devuelve todos los datos relacionados con no2_co.
+      operationId: getNo2_co
+      parameters:
+        - name: date
+          in: query
+          description: Fecha de la recogida de la información
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    post:
+      tags:
+        - Nitrogeno Monoxido Carbono
+      summary: Registra un nuevo dato de no2_co.
+      description: Creacion de nuevos datos asociados a no2_co.
+      operationId: postNo2_co
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/No2_co'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    put:
+      tags:
+        - Nitrogeno Monoxido Carbono
+      summary: Modifica un dato de no2_co previamente registrado
+      description: Modifica un dato de no2_co previamente registrado
+      operationId: putNo2_co
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/No2_co'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    delete:
+      tags:
+        - Nitrogeno Monoxido Carbono
+      summary: Eliminado de datos de no2_co.
+      description: Eliminado un dato de no2_co en la base de datos.
+      operationId: deleteNo2_co
+      parameters:
+        - name: idNo2_co
+          in: query
+          description: Id del dato de no2_co
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
 
 components:
   schemas:
@@ -98,6 +493,71 @@ components:
         date:
           type: string
           example: '01/10/2019'
+    AirQuality:
+      type: object
+      properties:
+        idAirQuality:
+          type: integer
+          format: int64
+          example: 1
+        amount:
+          type: number
+          example: 45.5
+        date:
+          type: string
+          example: '01/10/2019'
+    Luminosity:   
+      type: object
+      properties:
+        idAirQuality:
+          type: integer
+          format: int64
+          example: 1
+        amount:
+          type: number
+          example: 45.5
+        date:
+          type: string
+          example: '01/10/2019'   
+    Noise:   
+      type: object
+      properties:
+        idNoise:
+          type: integer
+          format: int64
+          example: 1
+        amount:
+          type: number
+          example: 45.5
+        date:
+          type: string
+          example: '01/10/2019' 
+    Humidity:   
+      type: object
+      properties:
+        idNoise:
+          type: integer
+          format: int64
+          example: 1
+        amount:
+          type: number
+          example: 45.5
+        date:
+          type: string
+          example: '01/10/2019' 
+    No2_co:   
+      type: object
+      properties:
+        idNoise:
+          type: integer
+          format: int64
+          example: 1
+        amount:
+          type: number
+          example: 45.5
+        date:
+          type: string
+          example: '01/10/2019'           
   responses:
     '201':
       description: Created
