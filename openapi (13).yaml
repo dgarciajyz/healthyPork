@@ -1,0 +1,125 @@
+openapi: 3.0.1
+info:
+  title: HealthyPork
+  description: >-
+    Esta API provee los servicios necesarios para gestionar los datos recogidos por los dispositivos Arduino y sus sensores.
+  version: '1.0'
+  termsOfService: 'http://spilab.es/'
+  contact:
+    name: HealthyPork
+    url: 'http://spilab.es/'
+    email: dgarciajyz@alumnos.unex.es
+paths:
+  /ozone:
+    get:
+      tags:
+        - Ozono
+      summary: Devuelve todos los datos relacionados con el ozono.
+      description: Devuelve todos los datos relacionados con el ozono.
+      operationId: getOzone
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    post:
+      tags:
+        - Ozono
+      summary: Registra un nuevo dato de ozono
+      description: Creacion de nuevos datos asociados al ozono recogido.
+      operationId: postOzone
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ozone'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    put:
+      tags:
+        - Ozono
+      summary: Modifica un dato de ozono previamente registrado
+      description: Modifica un dato de ozono previamente registrado
+      operationId: putOzone
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ozone'
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+    delete:
+      tags:
+        - Ozono
+      summary: Eliminado de datos de ozono
+      description: Eliminado un dato de ozono guardado en la base de datos.
+      operationId: deleteOzone
+      parameters:
+        - name: idOzone
+          in: query
+          description: Id del coste
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'          
+
+components:
+  schemas:
+    Ozone:
+      type: object
+      properties:
+        idOzone:
+          type: integer
+          format: int64
+          example: 1
+        amount:
+          type: number
+          example: 45.5
+        date:
+          type: string
+          example: '01/10/2019'
+  responses:
+    '201':
+      description: Created
+      content:
+        text/plain:
+          schema:
+            title: Created
+            type: string
+            example: Created
+    '404':
+      description: Not found response
+      content:
+        text/plain:
+          schema:
+            title: Endpoint not found
+            type: string
+            example: Not found
+    '405':
+      description: Invalid input
+      content:
+        text/plain:
+          schema:
+            title: Invalid input
+            type: string
+            example: The format is not valid
